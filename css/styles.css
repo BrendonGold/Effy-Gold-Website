@@ -5,24 +5,53 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #1DB954;
+    /* Spotify Green */
+    --secondary-color: #1f1f1f;
+    /* Dark Background */
+    --background-color: #121212;
+    /* Main Background */
+    --text-color: #ffffff;
+    /* White Text */
+    --url-color: #5f6aff;
+    --font-main: 'Montserrat', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
+
+/* Base Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
+    font-family: var(--font-main);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* Header Styling */
 header {
-    background-color: #1f1f1f;
-    padding: 20px 0;
+    background-color: var(--secondary-color);
+    padding: 0px 0;
     text-align: center;
 }
 
 header h1 {
     font-size: 2.5rem;
+    font-family: var(--font-secondary);
     margin-bottom: 10px;
 }
 
@@ -30,38 +59,56 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
+    gap: 15px;
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #1DB954;
-    /* Spotify Green */
+    color: var(--primary-color);
 }
 
 /* Main Content Styling */
 main {
     flex: 1;
-    padding: 40px 20px;
-    text-align: center;
+    padding: 0px 40px 20px;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 0px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    font-family: var(--font-secondary);
+}
+
+p,
+div {
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+}
+
+#socials {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 5px;
+}
+
+#mailing-list {
+    text-align: center;
+}
+
+#merch {
+    text-align: center;
 }
 
 /* Spotify Embed */
@@ -76,8 +123,7 @@ h2 {
     height: 0;
     overflow: hidden;
     max-width: 100%;
-    background-color: #1e3a8a;
-    /* Optional: Background color for better aesthetics */
+    background-color: var(--secondary-color);
 }
 
 .spotify-embed-container iframe {
@@ -89,42 +135,41 @@ h2 {
     border: 0;
 }
 
-
-
 /* Social Links Styling */
 .social-links a {
     display: inline-block;
     margin: 0 10px;
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #1DB954;
+    color: var(--primary-color);
 }
 
-/* Merch Button Styling */
+/* Button Styling */
 .button {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #1DB954;
-    color: #ffffff;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
     border-radius: 25px;
     font-size: 1rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
     background-color: #17a44d;
+    transform: scale(1.05);
 }
 
-/* Contact Form Styling */
+/* Form Styling */
 form {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 90%;
+    margin: 20px auto;
     text-align: left;
 }
 
@@ -147,15 +192,15 @@ form textarea {
 form input:focus,
 form textarea:focus {
     outline: none;
-    box-shadow: 0 0 5px #1DB954;
+    box-shadow: 0 0 5px var(--primary-color);
 }
 
 form button {
     padding: 12px 24px;
-    background-color: #1DB954;
+    background-color: var(--primary-color);
     border: none;
     border-radius: 25px;
-    color: #ffffff;
+    color: var(--text-color);
     cursor: pointer;
     font-size: 1rem;
     transition: background-color 0.3s ease;
@@ -167,20 +212,22 @@ form button:hover {
 
 /* Footer Styling */
 footer {
-    background-color: #1f1f1f;
+    background-color: var(--secondary-color);
     text-align: center;
-    padding: 15px 0;
+    padding: 20px 0;
     font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
+        gap: 10px;
     }
 
     main {
@@ -189,6 +236,62 @@ footer {
 
     .spotify-embed-container iframe {
         height: 300px;
-        /* Adjust iframe height for smaller screens */
     }
+}
+
+/* Style the select dropdown */
+select {
+    appearance: none;
+    /* Removes default browser styling */
+    background-color: var(--secondary-color);
+    /* Dark background */
+    color: var(--text-color);
+    /* White text */
+    font-family: var(--font-main);
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: 2px solid var(--primary-color);
+    /* Spotify green border */
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    width: 100%;
+    max-width: 300px;
+    /* Adjust width as needed */
+    transition: all 0.3s ease;
+}
+
+/* Style dropdown arrow */
+select::-ms-expand {
+    display: none;
+    /* Hide default arrow in IE */
+}
+
+select::after {
+    content: "\25BC";
+    /* Unicode for downward arrow */
+    font-size: 14px;
+    color: var(--text-color);
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Hover and Focus Styles */
+select:hover,
+select:focus {
+    background-color: var(--background-color);
+    /* Slightly lighter background */
+    border-color: var(--url-color);
+    /* Blue hover effect */
+}
+
+/* Option styles */
+option {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 10px;
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Effigy - Newsletters</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Header Links -->
+        </div>
+
+        <div class="social-container">
+            <!-- Centred social media links -->
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="newsletters">
+                <h2>Previous Newsletters</h2>
+                
+                <label for="newsletter-select">Choose a newsletter:</label>
+                <select id="newsletter-select">
+                    <option value="">-- Select --</option>
+                    <option value="newsletter-jan-2024">January 2024</option>
+                    <option value="newsletter-dec-2024">December 2024</option>
+                    <option value="newsletter-nov-2024">November 2024</option>
+                </select>
+
+                <div id="newsletter-content" class="currently-chosen-newsletter">
+                    <p>Select a newsletter to display its content.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> The Effigy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

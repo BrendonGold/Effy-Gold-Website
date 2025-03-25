@@ -5,21 +5,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --primary-color: #1DB954;
-    /* Spotify Green */
-    --secondary-color: #1f1f1f;
-    /* Dark Background */
-    --background-color: #121212;
-    /* Main Background */
-    --text-color: #ffffff;
-    /* White Text */
-    --url-color: #5f6aff;
-    --font-main: 'Montserrat', sans-serif;
-    --font-secondary: 'Open Sans', sans-serif;
-}
-
-/* Base Styling */
 body {
     font-family: var(--font-main);
     background-color: var(--background-color);
@@ -30,22 +15,10 @@ body {
     flex-direction: column;
 }
 
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Header Styling */
 header {
-    background-color: var(--secondary-color);
-    padding: 0px 0;
+    background-color: #1f1f1f;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -76,39 +49,17 @@ nav ul li a:hover {
 /* Main Content Styling */
 main {
     flex: 1;
-    padding: 0px 40px 20px;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 section {
-    margin-bottom: 0px;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--secondary-color);
+    margin-bottom: 40px;
 }
 
 h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-    font-family: var(--font-secondary);
-}
-
-p,
-div {
-    font-size: 1rem;
-    font-family: var(--font-secondary);
-}
-
-#socials {
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 5px;
-}
-
-#mailing-list {
-    text-align: center;
-}
-
-#merch {
-    text-align: center;
 }
 
 /* Spotify Embed */
@@ -118,8 +69,7 @@ div {
 
 .spotify-embed-container {
     position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 aspect ratio */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
     height: 0;
     overflow: hidden;
     max-width: 100%;
@@ -236,62 +186,6 @@ footer p {
 
     .spotify-embed-container iframe {
         height: 300px;
+        /* Adjust iframe height for smaller screens */
     }
-}
-
-/* Style the select dropdown */
-select {
-    appearance: none;
-    /* Removes default browser styling */
-    background-color: var(--secondary-color);
-    /* Dark background */
-    color: var(--text-color);
-    /* White text */
-    font-family: var(--font-main);
-    font-size: 1rem;
-    padding: 10px 15px;
-    border: 2px solid var(--primary-color);
-    /* Spotify green border */
-    border-radius: 8px;
-    cursor: pointer;
-    outline: none;
-    width: 100%;
-    max-width: 300px;
-    /* Adjust width as needed */
-    transition: all 0.3s ease;
-}
-
-/* Style dropdown arrow */
-select::-ms-expand {
-    display: none;
-    /* Hide default arrow in IE */
-}
-
-select::after {
-    content: "\25BC";
-    /* Unicode for downward arrow */
-    font-size: 14px;
-    color: var(--text-color);
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-/* Hover and Focus Styles */
-select:hover,
-select:focus {
-    background-color: var(--background-color);
-    /* Slightly lighter background */
-    border-color: var(--url-color);
-    /* Blue hover effect */
-}
-
-/* Option styles */
-option {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    font-size: 1rem;
-    padding: 10px;
 }
